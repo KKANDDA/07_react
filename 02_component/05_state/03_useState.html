@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script crossorigin src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+
+    <!-- 
+    useState
+    React 객체 내부에 존재하는 함수형 곡성이다..
+    그래서 React.useState 로 호출해야 한다..
+    -->
+
+    <script type="text/babel">
+
+        const {useState} = React;
+        
+        function Say(){ // message에 바로 접근하지 않고 set 을 이용한다.
+            const[message, setMessage] = useState("기본상태");
+            const[color, setColor] = useState("black");
+            const[backgroundColor, setBackgroundColor] = useState("white")
+
+            const onClickEnter = () => setMessage("안녕하쇼!");
+            const onClickLeave = () => setMessage("잘가쇼!");
+
+            // 글자색 변경은 하단의 버튼에서 처리했다.
+
+            const backgroundGreen = () => setBackgroundColor("green");
+            const backgroundBlue = () => setBackgroundColor("blue");
+    
+            return(
+                <>
+                    <h1 style={{color, backgroundColor}}>{message}</h1>
+                    {/* css 키워드를 지켜야 한다. */} 
+
+                    <div>
+                        <button onClick={onClickEnter}>입장</button>
+                        <button onClick={onClickLeave}>퇴장</button>
+
+                        {/* set state 값에 접근 */}
+                        <button onClick={()=>{setColor(color==="black"?"red":"black")}}>색 변경</button> 
+
+                        <button onClick={backgroundGreen}>배경색 녹색으로 변경</button>
+                        <button onClick={backgroundBlue}>배경색 파란색으로 변경</button>
+
+                    </div>
+                </>
+            )
+        }
+        ReactDOM.createRoot(document.getElementById("root")).render(<Say/>);
+    </script>
+</body>
+</html>

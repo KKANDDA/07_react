@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script crossorigin src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        // 버튼이 5개
+        // 콜솔창: 정수를 표시, 버튼과 상호작용하여 숫자가 늘어나고 줄어듦
+        // 이하 페이지의 기능을 설명
+
+        const {useState} = React;
+
+        function Test(){
+            const [num, setNum] = useState(0);
+            const plus =()=>setNum(num+1);
+            const minus =()=>setNum(num-1);
+
+            const [color, setColor] = useState("black");
+            const colorBlue =()=>setColor("blue");
+            const colorGreen =()=>setColor("green");
+            const colorOrange =()=>setColor("orange");
+
+            return(
+                <>
+                    <button style={{backgroundColor:"antiquewhite"}} onClick={plus}>+1</button>
+                    <button style={{color:"red"}} onClick={minus}>-1</button>
+                    <button onClick={colorBlue}>Blue</button>
+                    <button onClick={colorGreen}>Green</button>
+                    <button onClick={colorOrange}>Orange</button>
+
+                    <h1 style={{color}}>Number: {num}</h1>
+
+                    <h2>+1 버튼을 클릭하면 상태가 +1 됩니다.</h2>
+                    
+                    <h2>-1 버튼을 클릭하면 상태가 -1 됩니다.</h2>
+                    
+                    <h2 style={{width:1000}}>색상 버튼을 클릭하면 숫자의 색이 변경됩니다.</h2>
+                </>
+            )
+        }
+        ReactDOM.createRoot(document.getElementById("root")).render(<Test/>)
+    </script>
+</body>
+</html>
