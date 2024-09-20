@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script crossorigin src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+
+    const {useState} = React;
+
+    function CounterComponent(props){
+      const[initialCount, setInitialCount] = useState(props.initialCount);
+
+      const plusNumber=()=>{setInitialCount(initialCount+1)};
+      const reset=()=>{setInitialCount(props.initialCount)};
+
+      return(
+        <>
+        <h3>현재 카운트: {initialCount}</h3>
+        <button onClick={plusNumber}>+1</button>
+        <button onClick={reset}>초기화</button>
+        </>
+      );
+    }
+
+
+    function App() { // 샘플코드
+      return ( 
+        <div>
+          <h1>Props와 useState 활용</h1>
+          <CounterComponent initialCount={10}/>
+          {/* App이 실행되고 CounterComponent에 props가 보내진다. 보내는 놈이 상위 객체, 부모라고 볼 수 있다.*/}
+        </div>
+      );
+    }
+    ReactDOM.createRoot(document.getElementById("root")).render(<App/>);
+
+    </script>
+</body>
+</html>
