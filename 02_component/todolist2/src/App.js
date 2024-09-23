@@ -43,7 +43,7 @@ const Todolists = () => {
   // }
   // const checkBox =(e)=>{setCheck(!check)};
 
-  // 정민님
+  // 정민님 
   const checkBox = (e)=>{
     const label = e.target.nextElementSibling;
     label.style.textDecoration = check? "none" : "line-through";
