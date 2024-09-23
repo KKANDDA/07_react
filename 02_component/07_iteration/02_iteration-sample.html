@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script crossorigin src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        const {useState} = React;
+        
+        function App(){
+            const [names, setNames] = useState([
+                {id:1,name:"이순신"},
+                {id:2,name:"유관순"},
+                {id:3,name:"홍길동"}
+            ]);
+            const [inputText, setInputText] = useState("");
+            const [nextId, setNextId] = useState(4/*중복하여 들어 갈 수 있으니 주의, 나중에 추적이 어렵다*/);
+
+            const onChangeHandler = e => setInputText(e.target.value);
+            const onClickHandler = () => {
+                const changeNames = names.concat({ // 앞으로 자주 쓸 함수이다.
+                    id:nextId,
+                    name:inputText
+                });
+
+                setNames(changeNames);
+                setNextId(nextId+1);
+                setInputText("");
+            }
+
+            const onRemove = id/*클릭한 id*/ => {
+                const changeNames = names.filter(name=>name.id/*배열의 id*/ !== id/*클릭한 id*/);
+                setNames(changeNames);
+            }
+
+            const nameList = names/*배열의 매개변수명*/.map(name/*배열 안의 매개변수명*/ =>{
+                return (
+                    <li key={name.id/*id.id가 되겠지*/} onDoubleClick={()=>onRemove(name.id/*클릭한 id*/)}>
+                        {name.name}
+                    </li>)
+            });
+
+            return(
+                <>
+                <input type="text" value={inputText} onChange={onChangeHandler}/>
+                <button onClick={onClickHandler}>추가</button>
+                <ul>
+                    {nameList}
+                </ul>
+                </>
+            )
+        }
+        ReactDOM.createRoot(document.getElementById("root")).render(<App/>);
+    </script>
+</body>
+</html>
