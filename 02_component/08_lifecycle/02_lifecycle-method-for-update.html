@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script crossorigin src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+
+        // 마운트는 처음만, 이후는 업데이트
+
+        class TimePrinter extends React.Component{
+            constructor(props){
+                super(props);
+                this.state={
+                    now : new Date().toLocaleTimeString()
+                };
+            }
+
+            static getDerivedStateFromProps(props, state){
+                console.log("getDerivedStateFromProps 뼝!!!");
+                console.log(props);
+                console.log(state);
+                return null;
+            }
+
+            // 컴포넌트를 리렌더링 할 것인지 말 것인지 결정하는 메소드
+            shouldComponentUpdate(props, state){
+                console.log("shouldComponentUpdate 뿅뿅!!");
+                console.log(props);
+                console.log(state);
+                return true; // 랜더 호출을 정한다.. 트루면 호출하고 펄스면 호출 안 한다..
+            }
+
+            render(){
+                console.log("render");
+                return(
+                    <>
+                        <button onClick={()=>this.setState({now:new Date().toLocaleTimeString()})}>
+                            현재 시간 확인하기
+                        </button>
+                        <h1>{this.state.now}</h1>
+                    </>
+                )
+            }
+
+            // 컴포넌트의 변화를 실제 dom 에 반영하기 직전에 호출되는 메소드이다..
+            // 기존 거에서 참고할 값이 있을 때 사용한다..
+            getSnapshotBeforeUpdate(){
+                console.log("getSnapshotBeforeUpdate 쁭");
+                return{
+                    message:"스냅샷입니다.."
+                }
+            }
+
+            // 컴포넌트 업데이트 작업이 끝난 후 호출되는 메소드
+            componentDidUpdate(prevProps, prevState, snapshot){ // this를 사용해서 최신 것과도 접근할 수 있다..
+                // DOM 조작, API 호출, 데이터 동기화 등
+                console.log("componentDidUpdate 뿡");
+                console.log(prevProps);
+                console.log(prevState);
+                console.log(snapshot);
+
+            }
+
+        }
+        ReactDOM.createRoot(document.getElementById("root")).render(<TimePrinter test={"test 뾰로롱~~!"}/>);
+
+    </script>
+</body>
+</html>
