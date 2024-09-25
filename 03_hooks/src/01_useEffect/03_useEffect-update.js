@@ -5,7 +5,7 @@ const UseEffectUpdate = () =>{
     const [user, setUser] = useState({username:'', password:''});
     const onChangeHandler = e => {
         setUser({
-            ...user, // 스프레드 연산자, 기존의 객체를 그대로 복ㄷ사
+            ...user, // 스프레드 연산자, 기존의 객체를 그대로 복사
             [e.target.name] : e.target.value
         })
     }

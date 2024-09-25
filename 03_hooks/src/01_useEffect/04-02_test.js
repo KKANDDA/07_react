@@ -11,6 +11,7 @@ export const Timer=()=>{
     const [count, setCount] = useState(10);
     const [name, setName] = useState("");
     const [answer, setAnswer] = useState(false);
+    const [answer2, setAnswer2] = useState(false);
 
     useEffect(() => {
         const timer = setInterval(()=>{
@@ -22,6 +23,9 @@ export const Timer=()=>{
         }else if(answer===true){
             alert("성공!! 고마워요~")
             clearInterval(timer);
+        }else if(answer2===true){
+            alert("아뉜뎅~!~~! 시간 계속 흐르는뒈에~~~~!~!!")
+            // setAnswer2(false);
         }
         
         return() => clearInterval(timer);
@@ -33,6 +37,8 @@ export const Timer=()=>{
     const textSend = () => {
         if(name==="서현준"){
             setAnswer(true);
+        }else if(name !== "서현준"){
+            setAnswer2(true);
         }
         
     };
