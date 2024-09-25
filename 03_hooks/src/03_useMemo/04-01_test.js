@@ -15,11 +15,11 @@ const Calculator=({sqareNumbers})=>{
     
     return(
         <>
-            <div>
+            <ul>
                 {sqareNumbers.map((nowNum)=>{
                     return <li>{nowNum}</li>
                 })}
-            </div>
+            </ul>
         </>
     );
 
