@@ -14,6 +14,15 @@ import { ComplexCalculator } from "./03_useMemo/02_complex-calculator";
 import { UseMemoComponent } from "./03_useMemo/03_performance-useMemo";
 import { LocationComponent } from "./03_useMemo/04_object-type-problem";
 import { Question } from "./03_useMemo/04-01_test";
+import { ProductList } from "./03_useMemo/04-02_test";
+import { CallBackProblem } from "./04_useCallback/01_problem";
+import { FunctionMemorization } from "./04_useCallback/02_function-memorization";
+import { CallbackComponent } from "./04_useCallback/03_components";
+import { CounterRef } from "./05_useRef/01_problem";
+import { UseRefCounter } from "./05_useRef/02_useRef";
+import { LoginComponent } from "./05_useRef/03_inputRef";
+import Page from "./06_useContext/01_props-dribbling";
+import ContextContainer from "./06_useContext/02_useContext";
 
 
 
@@ -37,7 +46,16 @@ function App() {
     {/* <ComplexCalculator/> */}
     {/* <UseMemoComponent/> */}
     {/* <LocationComponent/> */}
-    <Question/>
+    {/* <Question/> */}
+    {/* <ProductList/> */}
+    {/* <CallBackProblem/> */}
+    {/* <FunctionMemorization/> */}
+    {/* <CallbackComponent/> */}
+    {/* <CounterRef/> */}
+    {/* <UseRefCounter/> */}
+    {/* <LoginComponent/> */}
+    {/* <Page/> */}
+    <ContextContainer/>
   </>
   );
 }
