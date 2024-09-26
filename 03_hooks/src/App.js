@@ -23,6 +23,7 @@ import { UseRefCounter } from "./05_useRef/02_useRef";
 import { LoginComponent } from "./05_useRef/03_inputRef";
 import Page from "./06_useContext/01_props-dribbling";
 import ContextContainer from "./06_useContext/02_useContext";
+import Gesipan from "./05_useRef/03_test";
 
 
 
@@ -55,7 +56,8 @@ function App() {
     {/* <UseRefCounter/> */}
     {/* <LoginComponent/> */}
     {/* <Page/> */}
-    <ContextContainer/>
+    {/* <ContextContainer/> */}
+    <Gesipan/>
   </>
   );
 }

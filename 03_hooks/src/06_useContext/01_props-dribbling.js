@@ -45,7 +45,9 @@ const Page =()=>{
     const [isDark,setIsDark] = useState(false);
 
     return(
-        <div style={{...Styles.page}}> {/*객체 안에 객체를 통으로 넣을 수 없다. (압축파일같은 것..) 그래서 객체를 펼쳐서 내용물을 넣었다*/}
+        <div style={{...Styles.page}}> 
+        {/*... style 속성 안에 객체를 깡통채 넣을 수 없다. 따개로 뜯어서 하나씩 넣어줘야 한다.
+               그래서 객체를 ...으로 펼쳐서 내용물을 넣었다*/}
             <Header isDark={isDark}/>
             <Content isDark={isDark}/>
             <Footer isDark={isDark} setIsDark={setIsDark}/>
