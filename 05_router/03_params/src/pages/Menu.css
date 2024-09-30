@@ -1,0 +1,4 @@
+.MenuBox div{ /*띄어쓰기는 자식들에게 적용하겠다는 뜻..*/ 
+    display: inline-block;
+    margin: 5px;
+}
