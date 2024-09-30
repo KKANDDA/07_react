@@ -17,6 +17,8 @@ Body
   "comment": "Sourced from some website"
 }
 
+
+45ea446d3f584ae8adc99bd4f011b2bb
 */
 
 import { useEffect, useState } from "react"
@@ -26,7 +28,7 @@ const Akuma =()=>{
 
     const getEvil =()=>{
         return(
-            fetch("https://evilinsult.com/generate_insult.php?lang=en&type=json")
+            fetch("https://cors-anywhere.herokuapp.com/https://evilinsult.com/generate_insult.php?lang=en&type=json")
         ).then(response => response.json())
     }
 
