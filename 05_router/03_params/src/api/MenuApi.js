@@ -15,5 +15,8 @@ export function searchMenu(menuName){
 
 // 3. 디테일 페이지 함수
 export function getMenuDetail(menuCode){
-    return menus.filter(menu => menu.menuCode === parseInt(menuCode))[0] // 혹시 중복되더라도.. 0은 필터링 이후 최상위 리스트 1개만 보여준다는 의미다.
+    return menus.filter(menu => menu.menuCode === parseInt(menuCode))[0]
+    // 필터로 뱉은
+    
+    // 혹시 중복되더라도.. 0은 필터링 이후 최상위 리스트 1개만 보여준다는 의미다.
 }

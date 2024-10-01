@@ -17,7 +17,7 @@ function App() {
             <Route path="menu">
               <Route index element={<Menu/>}/>
               <Route path=":menuCode" element={<MenuDetails/>}/>
-              {/* ex) localhost:3000/menu/30 -> menuCode=30 // url 파라메터 // :를 이용해야 변수처럼 담을 수 있다*/}
+              {/* ex) localhost:3000/menu/30 -> menuCode=30(30을 담았다) // url 파라메터 // :를 이용해야 변수처럼 담을 수 있다*/}
               <Route path="search" element={<MenuSearch/>}/>
             </Route>
           </Route>

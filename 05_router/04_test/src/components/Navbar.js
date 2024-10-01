@@ -9,14 +9,14 @@ const Navbar =()=>{
                 <li>
                     <NavLink
                         to={"/main"}>
-                    호무!!!!!!!!!!!!!!!
+                    호무!!!!!!!!!!!!!!!!!!!!
                     </NavLink>
                 </li>
 
                 <li>
                     <NavLink
                         to={"/menu"}>
-                    메뉴!!!!!!!!!!!!!!!!
+                    메뉴!!!!!!!!!!!!!!!!!!!!
                     </NavLink>
                 </li>
 

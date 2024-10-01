@@ -1,0 +1,8 @@
+[
+    { "id": 1, "name": "에스프레소", "price": 3000, "description": "매우 쓴 커핍니다." },
+    { "id": 2, "name": "아메리카노", "price": 4000, "description": "쓴 커피에 물을 탔습니다." },
+    { "id": 3, "name": "카페라떼", "price": 5000, "description": "쓴 커피에 우유를 탔습니다." },
+    { "id": 4, "name": "카푸치노", "price": 5000, "description": "우유 커피에 거품을 끼엊은.." },
+    { "id": 5, "name": "바닐라 라떼", "price": 5500, "description": "우유 커피에 바닐라 시럽을 끼엊은.." }
+  ]
+  
