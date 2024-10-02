@@ -36,15 +36,18 @@ const NewsAPI =()=>{
             {newsList.map(news=>{
                 return(
                 <>
-                <img src={news.urlToImage}/>
+                    <img src={news.urlToImage}/>
+                    <br/>
+                    <title>{news.title}</title>
+                    <br/>
+                    <contents>{news.description}</contents>
+                    <br/>
+                    <a href={news.url}>
+                        <button>기사 내용 자세히 보기</button>
+                    </a>
+                    <br/>
 
-                <title>
-                </title>
-
-                <contents>
-                </contents>
-
-                <button onClick={()=>{}}></button>
+                    
                 </>
                 )
             

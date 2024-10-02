@@ -11,6 +11,8 @@ const MenuItem =({menu})=>{
                 <h3>이름: {menu.menuName}</h3>
                 <h3>가격: {menu.menuPrice}</h3>
                 <h3>분류: {menu.categoryName}</h3>
+
+                <button onClick={()=>{}}>장바구니에 담기</button>
             </div>
         </Link>
     )
